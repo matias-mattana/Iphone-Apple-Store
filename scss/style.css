@@ -9,12 +9,20 @@ body {
 img {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 150px; /* Reducido de 100% o 300px a 150px */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Clase específica para imágenes iPhone */
+.iphone-img {
+  max-width: 150px;
+  width: auto; /* no estira la imagen al 100% */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
 /* ------------------ ENCABEZADO ------------------ */
 header {
   background-color: #000;
@@ -92,6 +100,13 @@ footer {
   padding: 50px 20px;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
+
+  position: relative !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+
+  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.5);
+  min-height: 150px; /* asegura que el footer tenga espacio visible */
 }
 
 footer section {
@@ -100,13 +115,19 @@ footer section {
   padding: 20px;
 }
 
+footer .copyright {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
 /* ------------------ NOSOTROS ------------------ */
 .nosotros {
   background-color: #222;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-bottom: 40px; /* 🔧 Esto crea espacio debajo */
+  margin-bottom: 40px; /* espacio debajo */
 }
 
 .nosotros h3 {
@@ -186,13 +207,6 @@ footer section {
   line-height: 1.5;
 }
 
-/* ------------------ COPYRIGHT ------------------ */
-footer .copyright {
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #999;
-}
-
 /* ------------------ SCROLL SUAVE ------------------ */
 html {
   scroll-behavior: smooth;
@@ -212,7 +226,8 @@ html {
   footer section {
     padding: 15px;
   }
-}
-.por-que-apple {
-  background-color: #1d1d1f;
+  
+  img {
+    max-width: 120px !important; /* más chicas en celulares */
+  }
 }
